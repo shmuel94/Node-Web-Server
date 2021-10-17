@@ -17,9 +17,35 @@ const server = http.createServer((req, res) => {
                 
             })
             break;
+
+        case "/css/index.css":
+            fs.readFile("./css/index.css", "utf8", (err, data)=>{
+                if(err){
+                    return err
+                }
+                else{
+                    res.write(data)
+                }
+                res.end();
+                
+            })
+            break;
     
         case "/about":
             fs.readFile("./public/about.html","utf8", (err, data)=>{
+                if(err){
+                    return err
+                }
+                else{
+                    res.write(data)
+                }
+                res.end();
+                
+            })
+            break;
+
+        case "/css/about.css":
+            fs.readFile("./css/about.css", "utf8", (err, data)=>{
                 if(err){
                     return err
                 }
@@ -43,6 +69,19 @@ const server = http.createServer((req, res) => {
                 
             })
             break;
+
+        case "/css/sales.css":
+        fs.readFile("./css/sales.css", "utf8", (err, data)=>{
+            if(err){
+                return err
+            }
+            else{
+                res.write(data)
+            }
+            res.end();
+            
+        })
+        break;
 
         case "/products":
             res.write(products);
