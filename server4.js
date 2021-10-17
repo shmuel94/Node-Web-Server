@@ -57,8 +57,8 @@ const server = http.createServer((req, res) => {
             })
             break;
 
-        case "/js/about.css":
-            fs.readFile("./js/about.css", "utf8", (err, data)=>{
+        case "/css/about.css":
+            fs.readFile("./css/about.css", "utf8", (err, data)=>{
                 if(err){
                     return err
                 }
