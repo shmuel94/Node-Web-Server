@@ -30,6 +30,19 @@ const server = http.createServer((req, res) => {
                 
             })
             break;
+
+        case "/js/index.js":
+            fs.readFile("./js/index.js", "utf8", (err, data)=>{
+                if(err){
+                    return err
+                }
+                else{
+                    res.write(data)
+                }
+                res.end();
+                
+            })
+            break;
     
         case "/about":
             fs.readFile("./public/about.html","utf8", (err, data)=>{
@@ -44,8 +57,21 @@ const server = http.createServer((req, res) => {
             })
             break;
 
-        case "/css/about.css":
-            fs.readFile("./css/about.css", "utf8", (err, data)=>{
+        case "/js/about.css":
+            fs.readFile("./js/about.css", "utf8", (err, data)=>{
+                if(err){
+                    return err
+                }
+                else{
+                    res.write(data)
+                }
+                res.end();
+                
+            })
+            break;            
+
+        case "/js/about.js":
+            fs.readFile("./js/about.js", "utf8", (err, data)=>{
                 if(err){
                     return err
                 }
@@ -72,6 +98,19 @@ const server = http.createServer((req, res) => {
 
         case "/css/sales.css":
         fs.readFile("./css/sales.css", "utf8", (err, data)=>{
+            if(err){
+                return err
+            }
+            else{
+                res.write(data)
+            }
+            res.end();
+            
+        })
+        break;
+
+        case "/js/sales.js":
+        fs.readFile("./js/sales.js", "utf8", (err, data)=>{
             if(err){
                 return err
             }
